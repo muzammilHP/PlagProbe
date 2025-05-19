@@ -1,0 +1,61 @@
+$teacherId = Auth::guard('teacher')->id();
+
+    $assignments = DB::table('assignments')
+        ->join('classrooms', 'assignments.class_code', '=', 'classrooms.class_code')
+        ->where('assignments.teacher_id', $teacherId)
+        ->select(
+            'assignments.name as assignment_name',
+            'assignments.completion_date',
+            'assignments.type',
+            'assignments.created_at',
+            'classrooms.course_name',
+            'classrooms.section_name'
+        )
+        ->get();
+
+    return response()->json($assignments);
+
+
+
+
+    assignments.forEach(assignmentItem => {
+                    let assignmentDiv1 = document.createElement("div");
+                    assignmentDiv1.classList.add("assignment2");
+
+                    assignmentDiv1.innerHTML = `
+                <div class="assignment-div-c">
+                    <div class="assignment-info-cover-c">
+                    <div class="assignment-div-title-c">
+                        <h3>${assignmentItem.assignment_name}</h3>
+                    </div>
+
+                    <div class="assignment-div-course-name">
+            <p>Course</p>
+            <h4>${assignmentItem.course_name}</h4>
+        </div>
+
+        <div class="assignment-div-section-name">
+            <p>Section<p>
+            <h4>${assignmentItem.section_name}</h4>
+        </div>
+
+                    <div class="assignment-div-completion-date">
+                        <p>End Date<p>
+                        <h4>${assignmentItem.completion_date}</h4>
+                    </div>
+
+                    <div class="assignment-div-type">
+                        <p>Type</p>
+                        <h4>${assignmentItem.type}</h4>
+                    </div>
+
+                    <div class="assignment-div-created-at">
+                    <p>Created At</p>
+                    <h4>${assignmentItem.created_at}</h4>
+                    </div>
+
+                    </div>
+
+                    <button class="delete-assignment-btn" data-id="${assignmentItem.id}">Delete</button>
+                </div>
+                `;
