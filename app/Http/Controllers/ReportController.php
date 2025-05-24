@@ -117,13 +117,13 @@ public function saveReport(Request $request)
     $studentEmail = $request->input('student_email');
     $htmlReport = base64_decode($request->input('report_data'));
     $assignmentId = $request->input('assignment_id');
-    $existingReport = Report::where('student_email', $studentEmail)
-                            ->where('assignment_id', $assignmentId)
-                            ->first();
+    // $existingReport = Report::where('student_email', $studentEmail)
+    //                         ->where('assignment_id', $assignmentId)
+    //                         ->first();
 
-    if ($existingReport) {
-        return back()->with('error', 'A report for this student and assignment already exists.');
-    }
+    // if ($existingReport) {
+    //     return back()->with('error', 'A report for this student and assignment already exists.');
+    // }
 
     $fileName = 'plagiarism_reports/report_' . time() . '.html';
     Storage::put($fileName, $htmlReport);
@@ -151,7 +151,6 @@ $section = $classroom->section_name ?? 'Unknown';
     ]);
 
     return back()->with('success', 'Report saved successfully!')
-    ->with('report_saved', true)
     ->with('saved_assignment_id', $assignmentId)
     ->with('saved_student_email', $studentEmail);
 }

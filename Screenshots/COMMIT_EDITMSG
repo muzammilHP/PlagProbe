@@ -1,0 +1,18 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is behind 'origin/main' by 4 commits, and can be fast-forwarded.
+#   (use "git pull" to update your local branch)
+#
+# Changes to be committed:
+#	modified:   app/Http/Controllers/ReportController.php
+#	modified:   public/css/studentpanel.css
+#	modified:   public/css/teacherpanel.css
+#	modified:   public/js/TeacherPanel.js
+#	modified:   resources/views/Auth/teacherLogin.blade.php
+#	modified:   resources/views/Main/plagiarism-result.blade.php
+#	modified:   resources/views/Main/studentpanel.blade.php
+#	modified:   resources/views/Main/teacherpanel.blade.php
+#

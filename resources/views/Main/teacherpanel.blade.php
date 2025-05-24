@@ -66,12 +66,12 @@
             </div>
 
             <!-- Dropdown -->
-            <div id="profileDropdown" class="profile-dropdown" style="display: none; position: absolute; top: 60px; right: 0; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 140px; padding: 10px; z-index: 1000; ">
+            <div id="profileDropdown" class="profile-dropdown" style="display: none; position: absolute; top: 60px; right: 0; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100px; padding: 10px; z-index: 1000; ">
                 <a href="{{ route('teacher.profile') }}">Edit Profile</a>
                 
-                <form action="{{ route('teacher.logout') }}" method="POST" style="margin: 0;">
+                <form style="padding-left:1px;" action="{{ route('teacher.logout') }}" method="POST" style="margin: 0;">
                     @csrf
-                    <button type="submit">
+                    <button  type="submit">
                         Logout
                     </button>
                 </form>
@@ -386,7 +386,7 @@
         
     function toggleProfileDropdown() {
         const dropdown = document.getElementById('profileDropdown');
-        dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'flex' : 'none';
     }
 
     document.addEventListener('click', function(event) {

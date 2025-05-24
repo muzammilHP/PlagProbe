@@ -233,6 +233,45 @@ body{
 }
 
 
+
+#profileDropdown a{
+    text-decoration: none;
+    padding-left: 25px;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    height: 22px;
+    width: 69px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #005F40;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#profileDropdown a:hover{
+    background-color:rgb(226, 236, 236);
+    border: 1px solid black;
+    transform: scale(1.1); 
+    color: black;
+    cursor: pointer;
+}
+    
+#profileDropdown{
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+#profileDropdown button{
+    padding-left: none;
+}
+
 /*--------------------------Home----------------------------------*/
 #home{
     height: 100%;

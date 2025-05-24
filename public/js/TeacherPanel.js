@@ -109,12 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     
-    // Fetch classes and display them
     function fetchClasses() {
         fetch("http://127.0.0.1:8000/get-classes")
             .then(response => response.json())
             .then(classes => {
-                classBottom.innerHTML = ''; // Clear existing classes
+                classBottom.innerHTML = '';
 
 
                 classes.forEach(classItem => {
@@ -700,8 +699,8 @@ function checkClassPlag() {
     const routeMap = {
         text: "/textassignment/class-plag",
         handwritten: "/handassignment/class-plag",
-        presentation: "/pptassignment/class-plag",
-        programming: "/codingassignment/class-plag"
+        presentation: "/textassignment/class-plag",
+        programming: "/handassignment/class-plag"
     };
 
     const formAction = routeMap[assignmentType] || "#";

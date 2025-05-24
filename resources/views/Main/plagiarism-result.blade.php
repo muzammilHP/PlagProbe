@@ -56,9 +56,7 @@
                 <input type="hidden" name="assignment_id" value="{{ $assignmentId ?? '' }}">
                 <input type="hidden" name="report_data" value="{{ base64_encode($reportHtml) }}">
                 <button type="submit"
-    class="save-report {{ $reportIsSaved ? 'saved' : '' }}"
-    {{ $reportIsSaved ? 'disabled' : '' }}>
-    {{ $reportIsSaved ? 'Saved' : 'Save Report' }}
+    class="save-report ">Saved
 </button>
                 </form>
 

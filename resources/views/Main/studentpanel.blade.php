@@ -14,8 +14,8 @@
     <div class="container">
         <div class="left">
             <div class="left-top">
-                <div class="logo-head">
-                    <img src="{{asset('images/Logo.png')}}" alt="PlagProbe Logo">
+               <div class="logo-head">
+                    <img src="{{asset('images/Logo.png')}}" alt="PlagProbe Logo" id="logo-home-btn" style="cursor:pointer;">
                 </div>
             </div>
             <div class="bottom">
@@ -54,23 +54,28 @@
                 <div class="left-r">
                     <h2>Hi {{ $student->username }} 👋 — Welcome to PlagProbe!</h2>
                 </div>
-                <div class="right-r">
-                    <!-- <a class="notification" href=""><img src="{{asset('images/notifications.png')}}"
-                            alt="Notification"></a> -->
-                    <a href="{{ route('student.profile') }}"
-                        style="text-decoration: none; color: inherit; border:none;">
-                        <div class="profile">
-                            <img src="{{ asset('images/profile.png') }}" alt="profile-pic">
-                            <span style="font-size:18px; font-weight:bold;">{{ auth('student')->user()->username }}</span>
-                        </div>
-                    </a>
-                    <form action="{{ route('student.logout') }}" method="POST">
-                        @csrf
-                        <button type="submit">
-                            Logout
-                        </button>
-                    </form>
-                </div>
+                <div class="right-r" style="position: relative;">
+        <div style="display: flex; flex-direction: column; align-items: flex-end;">
+            <div class="profile" onclick="toggleProfileDropdown()" style="cursor: pointer;">
+                <img src="{{ asset('images/profile.png') }}" alt="profile-pic">
+                <span style="font-size:18px; font-weight:bold;">
+                    {{ auth('student')->user()->username }}
+                </span>
+            </div>
+
+            <!-- Dropdown -->
+            <div id="profileDropdown" class="profile-dropdown" style="display: none; position: absolute; top: 60px; right: 0; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100px; padding: 10px; z-index: 1000; ">
+                <a href="{{ route('student.profile') }}">Edit Profile</a>
+                
+                <form style="padding-left:1px;" action="{{ route('student.logout') }}" method="POST" style="margin: 0;">
+                    @csrf
+                    <button  type="submit">
+                        Logout
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
             </div>
             <div class="bottom2">
                 <div class="content-section" id="home">
@@ -261,6 +266,20 @@
         @endif
 
     </div>
+    <script>
+        function toggleProfileDropdown() {
+        const dropdown = document.getElementById('profileDropdown');
+        dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'flex' : 'none';
+    }
+
+    document.addEventListener('click', function(event) {
+        const profile = document.querySelector('.profile');
+        const dropdown = document.getElementById('profileDropdown');
+        if (!profile.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+    </script>
     <script src="{{asset('js/TextAssignment.js')}}"></script>
     <script src="{{asset('js/HandwrittenAssignment.js')}}"></script>
     <script src="{{asset('js/StudentPanel.js')}}"></script>

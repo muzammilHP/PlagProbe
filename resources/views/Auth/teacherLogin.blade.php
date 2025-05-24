@@ -71,7 +71,7 @@
         }
 
         function validatePassword(password) {
-            return password.length >= 6; // Minimum 6 characters
+            return password.length >= 8; // Minimum 6 characters
         }
 
         // Add event listeners for real-time validation
@@ -85,7 +85,7 @@
 
         passwordInput.addEventListener('blur', () => {
             if (!validatePassword(passwordInput.value)) {
-                passwordError.textContent = 'Password must be at least 6 characters long.';
+                passwordError.textContent = 'Password must be at least 8 characters long.';
             } else {
                 passwordError.textContent = ''; // Clear the error
             }
