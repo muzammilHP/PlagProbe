@@ -15,6 +15,20 @@ PlagProbe is an advanced plagiarism detection system designed for educational us
 - Detailed plagiarism reports and analytics
 - Admin panel to manage users, classes, and system settings
 
+**Screenshots:**
+
+![Homepage](Screenshots/HomePage.png)
+![Register Teacher](Screenshots/Register-Teacher.png)
+![Login Teacher](Screenshots/Login-Teacher.png)
+![Teacher Panel](Screenshots/teacher-panel.png)
+![Student Panel](Screenshots/student-panel.png)
+![Upload Assignment](Screenshots/Upload-Assignment.png)
+![Class Management](Screenshots/Class-Management.png)
+![Saved Reports](Screenshots/Saved-Reports.png)
+![Class Plagiarism](Screenshots/Check-Class-Plagiarism.png)
+![Plagiarism Report](Screenshots/Report.png)
+![Group Plagiarism Report](Screenshots/Class-Plagiarism-Report.png)
+
 **Demo:** https://youtu.be/vHh1caphJFg
 
 **Installation:**
